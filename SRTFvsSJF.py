@@ -57,9 +57,7 @@ for i in range(n):
         pros[i][0], pros[i][1],pros[i][2], ct[i], tat[i], wt[i]
     ])
 results.sort(key=lambda x: int(x[0][1:]))
-
 print("\nPID\tAT\tBT\tCT\tTAT\tWT")
-
 total_tat = 0
 total_wt = 0
 
@@ -91,7 +89,6 @@ pros = [
 ]
 
 n = len(pros)
-
 time = 0
 completed = []
 total_tat = 0
@@ -112,9 +109,8 @@ while len(completed) < n:
             for p in pros
             if p[0] not in completed
         )
-
         continue
-
+        
     available.sort(key=lambda x: (x[2], x[1]))
     pid, at, bt = available[0]
     ct = time + bt
