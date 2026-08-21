@@ -152,8 +152,8 @@ for process in execution_order:
     print(process[0], end=" -> ")
 
 print("Done")
-
-print("\nOperation\t\tAverage TAT\tAverage WT")
+print("Pre-emptive SJF VS Non-Pre-emptive SJF:")
+print("Operation\t\tAverage TAT\tAverage WT")
 
 print(
     f"Pre-emptive SJF\t\t"
@@ -166,3 +166,16 @@ print(
     f"{non_preemptive_avg_tat:.1f}\t\t"
     f"{non_preemptive_avg_wt:.1f}"
 )
+print("\nBest Algorithm:")
+
+if preemptive_avg_tat < non_preemptive_avg_tat and preemptive_avg_wt < non_preemptive_avg_wt:
+    print("Pre-emptive SJF is better.")
+    print("Reason: It has lower Average TAT and Average WT.")
+
+elif non_preemptive_avg_tat < preemptive_avg_tat and non_preemptive_avg_wt < preemptive_avg_wt:
+    print("Non-Pre-emptive SJF is better.")
+    print("Reason: It has lower Average TAT and Average WT.")
+
+else:
+    print("Both algorithms have similar performance.")
+    print("The better algorithm depends on the Average TAT and Average WT.")
